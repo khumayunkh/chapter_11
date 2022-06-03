@@ -90,6 +90,16 @@ console.log(s)
 console.log(JSON.parse(s))
 
 
+let euro = Intl.NumberFormat('es',{style:'currency', currency:'EUR'})
+console.log(euro.format(10)) // 10,00 €
+let pounds = Intl.NumberFormat('en',{style:'currency',currency:'GBP'})
+console.log(pounds.format(20)) // £20.00
+
+
+let data = [0.09, 9, 10, 0.8]
+let formatData = Intl.NumberFormat(undefined,{style:'percent', minimumFractionDigits:3,maximumSignificantDigits:2}).format
+console.log(data.map(formatData)) // [ "9%", "900%", "1,000%", "80%" ]
+
 
 
 
