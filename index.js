@@ -100,6 +100,16 @@ let data = [0.09, 9, 10, 0.8]
 let formatData = Intl.NumberFormat(undefined,{style:'percent', minimumFractionDigits:3,maximumSignificantDigits:2}).format
 console.log(data.map(formatData)) // [ "9%", "900%", "1,000%", "80%" ]
 
+let arabic =Intl.NumberFormat('ar',{useGrouping:false}).format
+console.log(arabic(123452)) // ١٢٣٤٥٢
 
+let hindi = Intl.NumberFormat('hi-IN-u-nu-deva').format
+console.log(hindi(1234)) // १,२३४
 
+let b =new Date()
+let opt = {weekday: 'long', month:'numeric', year:'numeric', day:'numeric'}
+
+Intl.DateTimeFormat('en-US', opt).format(d)
+console.log(Intl.DateTimeFormat('en-US', opt).format(d)) //Friday, 6/3/2022
+console.log(Intl.DateTimeFormat('en-u-ca-islamic',opt ).format(d)) // Friday, 11/4/1443 AH
 
