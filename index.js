@@ -135,3 +135,12 @@ y.set(2,2)
 console.log(y) // (2 -> 2)
 y.set('one', 1)
 console.log(y.get('one')) // 1
+
+
+let url = new URL('https://www.instagram.com')
+url.pathname='khumayun.kh'
+console.log(url)
+console.log(url.href)//https://www.instagram.com/khumayun.kh
+url.searchParams.append('q', 'z')
+url.searchParams.append('q', 'r')
+console.log(url.href) //https://www.instagram.com/khumayun.kh?q=z&q=r
